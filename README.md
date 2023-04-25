@@ -62,3 +62,30 @@ to attach ig to vpc
 click on Action then connect to VPC
 then find your VPC
 then click on attach ig
+
+step 3
+click on subnet
+click create subnet
+select your vpc
+chose a name
+no pref for AZ
+
+cidr calculator: https://www.ipaddressguide.com/cidr
+
+step 4: create route table 
+click on route tavle
+give name
+select VPC
+click create route table
+
+assoicate subenet with route table
+click on subnet association
+click on edit subnet association
+select your subnet
+
+click routes
+click edit route
+add a route as per below
+<img width="696" alt="image" src="https://user-images.githubusercontent.com/118978642/234263126-4bbe28d3-bb55-4a9f-85d5-3ac65a5a2fee.png">
+
+save association
