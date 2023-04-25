@@ -90,3 +90,31 @@ add a route as per below
 <img width="696" alt="image" src="https://user-images.githubusercontent.com/118978642/234263126-4bbe28d3-bb55-4a9f-85d5-3ac65a5a2fee.png">
 
 save association
+
+
+### create app and db infrastructure
+
+1. create AMI for app and db
+
+- click on running instance
+- click on action
+- click on image
+- insert details including name
+- click create
+
+do this for both the app and db instances
+
+2. create instance from AMIs
+
+- under AMIs on lefthandside
+- click AMIs
+- select the AMI for app
+- click launch instance
+- give it a name
+- make sure the AMI is the one you created
+- select keypair
+- under network setting, chose your VPC and select the public subnet
+- enable auto-assign IP
+- create a new SG make sure your security group has the following ports opened 
+<img width="332" alt="image" src="https://user-images.githubusercontent.com/118978642/234279412-e4b47835-6319-44b8-8953-3466a6328ed5.png">
+- launch instance
