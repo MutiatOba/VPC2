@@ -44,54 +44,54 @@ steps:
 3. create a public subnet 10.0.1.0/24 - 3.1 connect subnet to VPC
 4. create a route table - associate it with public subnet and attach to IG
 
-step 1:
+1. step 1:
 
-go to aws
-type vpc in search box
-click create vpc
-click VPC only
-give it a name
-type in ip range: 10.0.0.0/16
-leave rest default
-click create vpc
+- go to aws
+- type vpc in search box
+- click create vpc
+- click VPC only
+- give it a name
+- type in ip range: 10.0.0.0/16
+- leave rest default
+- click create vpc
 
-step 2:
-click on IG
-click create ig
-give it a name
-create ig
+2. step 2:
+- click on IG
+- click create ig
+- give it a name
+- create ig
 
 to attach ig to vpc
-click on Action then connect to VPC
-then find your VPC
-then click on attach ig
+- click on Action then connect to VPC
+- then find your VPC
+- then click on attach ig
 
-step 3
-click on subnet
-click create subnet
-select your vpc
-chose a name
-no pref for AZ
+3. step 3
+- click on subnet
+- click create subnet
+- select your vpc
+- chose a name
+- no pref for AZ
 
 cidr calculator: https://www.ipaddressguide.com/cidr
 
-step 4: create route table 
-click on route tavle
-give name
-select VPC
-click create route table
+4. step 4: create route table 
+- click on route tavle
+- give name
+- select VPC
+- click create route table
 
 assoicate subenet with route table
-click on subnet association
-click on edit subnet association
-select your subnet
+- click on subnet association
+- click on edit subnet association
+- select your subnet
 
-click routes
-click edit route
-add a route as per below
+- click routes
+- click edit route
+- add a route as per below
 <img width="696" alt="image" src="https://user-images.githubusercontent.com/118978642/234263126-4bbe28d3-bb55-4a9f-85d5-3ac65a5a2fee.png">
 
-save association
+- save association
 
 
 ### create app and db infrastructure
