@@ -111,10 +111,11 @@ do this for both the app and db instances
 - select the AMI for app
 - click launch instance
 - give it a name
-- make sure the AMI is the one you created
+- make sure the AMI used is the one you created
 - select keypair
 - under network setting, chose your VPC and select the public subnet
 - enable auto-assign IP
 - create a new SG make sure your security group has the following ports opened 
 <img width="332" alt="image" src="https://user-images.githubusercontent.com/118978642/234279412-e4b47835-6319-44b8-8953-3466a6328ed5.png">
 - launch instance
+- ssh to your app, make sure you use ubuntu user
