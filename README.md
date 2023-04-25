@@ -153,4 +153,19 @@ no need to create any additional routes. need to associate route table with subn
 <img width="329" alt="image" src="https://user-images.githubusercontent.com/118978642/234285858-316dad58-10a5-4001-b66a-bd0f864c8316.png">
 - enable auto-asign IP
 - click on launch instace
-- ssh into the instance
+- you wont be able to ssh into private instance
+
+5. connect app to db
+
+go to the app instance and cd to home 
+
+```sudo nano .bashrc```
+
+update for the new db ip address (use the private address): ```export DB_HOST=mongodb://<ip_address_db>:27017/posts```
+- ```source .bashrc```
+- ```printenv DB_HOST```
+
+cd to app folder
+- ```npm start```
+- ```node app.js```
+your app should run on webbrowser: appip:3000/posts
