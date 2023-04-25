@@ -1,4 +1,5 @@
-Virtual private clouds (VPC)
+### Virtual private clouds (VPC)
+
 A VPC is a virtual network that closely resembles a traditional network that you'd operate in your own data center. After you create a VPC, you can add subnets.
 
 Benefits:
