@@ -33,6 +33,8 @@ https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html
 
 https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html
 
+### create VPC and subnet
+
 <img width="183" alt="image" src="https://user-images.githubusercontent.com/118978642/234258590-38928034-6973-42f0-93a6-20df120468d7.png">
 
 steps:
