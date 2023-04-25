@@ -119,3 +119,37 @@ do this for both the app and db instances
 <img width="332" alt="image" src="https://user-images.githubusercontent.com/118978642/234279412-e4b47835-6319-44b8-8953-3466a6328ed5.png">
 - launch instance
 - ssh to your app, make sure you use ubuntu user
+- cd to app folder - type ```npm start```
+
+3. create private subnet for db instance
+- on aws consolse search VPC
+- click on subnets on lefthandside
+- click create subnet 
+- select your vpc
+- chose cidr: 10.0.13.0/24 (public is 10.0.12.0/24)
+
+create a route table for private subet
+- click on route tables on lefthand side
+- create route table
+- give it a name
+- associate it with VPC
+- click create
+
+no need to create any additional routes. need to associate route table with subnet
+- click on subnet association tab 
+- click on edit subnet association
+- tick your private subnet
+- click subnet assocation
+
+4. create db instance
+
+- type ec2 in search box on aws console
+- click on AMIs (under images on lefthand side)
+- click on launch instance from AMIs
+- give it a name
+- make sure AMI is the db one created
+- select key pair
+- under network setting click edit then chose VPC and private subnet and create security group with the following ports:
+<img width="329" alt="image" src="https://user-images.githubusercontent.com/118978642/234285858-316dad58-10a5-4001-b66a-bd0f864c8316.png">
+
+- enable auto-asign IP
