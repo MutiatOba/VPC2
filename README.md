@@ -171,3 +171,11 @@ cd to app folder
 - ```npm start```
 - ```node app.js```
 your app should run on webbrowser: appip:3000/posts
+
+### avaialability, fault tolerant, scalable 
+
+Elastic Load Balancing automatically distributes your incoming application traffic across all the EC2 instances that you are running. Elastic Load Balancing helps to manage incoming requests by optimally routing traffic so that no one instance is overwhelmed.
+
+AWS Auto Scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost
+
+
