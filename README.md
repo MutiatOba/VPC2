@@ -186,6 +186,10 @@ elasticity means that once a system is scalable, eleasiticy means there will be 
 load balancers are servers that will forward internet traffic to multiple serverse ( instances) downstream. Elastic Load Balancing automatically distributes your incoming application traffic across all the EC2 instances that you are running. Elastic Load Balancing helps to manage incoming requests by optimally routing traffic so that no one instance is overwhelmed.
 
 AWS Auto Scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost.
+- scales in or out depending on capacity
+- ensures we have amin and max number of instances
+- automatically registers new instances to laod balancer
+- replaces unhaelthy instances 
 
 #### points to consider when setting up
 
