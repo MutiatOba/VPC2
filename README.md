@@ -189,5 +189,10 @@ min and desired capaicty = 2 so infrastructure is fault tolerant
 scale  out - create more instances of the same size, scale up - build a bigger ec2 server (e.g bigger cpu instance)
 
  To achieve this:
+ - need a launch template that can be replicated in multiple AZs with required information
+ - ASG policy - target tracking policy (we want to track the target e.g. 50% or above CPU utilisation - if ec2 instance cpu hits 50% then ASG will spin up another instance)
+ - target group required ports access
+ - load balancer - application load balancer (it works at layer 7 of networking which utilitise Http) which will need multi AZs information
 
+<img width="727" alt="image" src="https://user-images.githubusercontent.com/118978642/234559502-bdf58bee-9162-4d88-bf55-0fd33661350d.png">
 
