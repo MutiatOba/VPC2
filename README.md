@@ -175,14 +175,23 @@ your app should run on webbrowser: appip:3000/posts
 ### avaialability, fault tolerant, scalable 
 <img width="311" alt="image" src="https://user-images.githubusercontent.com/118978642/234557501-29bb4235-97cb-4631-b231-94d98038c872.png">
 
+#### general definitions
 
-Elastic Load Balancing automatically distributes your incoming application traffic across all the EC2 instances that you are running. Elastic Load Balancing helps to manage incoming requests by optimally routing traffic so that no one instance is overwhelmed.
+scalability mans that an application/system can handle grater loads by adapting - so making the hardware stronger (sclae up) or adding nodes (scale out). There are two types: vertical (increase size of instance) and horizontal (increase the number of instances) scaling
+
+highly available means that you're running you application/systems in at least two AZs. It goes hand in hand with horizontal scaling. so if one AZs is down then you still have the other one. 
+
+elasticity means that once a system is scalable, eleasiticy means there will be some autoscaling so that the system can scale based on the laods.
+
+load balancers are servers that will forward internet traffic to multiple serverse ( instances) downstream. Elastic Load Balancing automatically distributes your incoming application traffic across all the EC2 instances that you are running. Elastic Load Balancing helps to manage incoming requests by optimally routing traffic so that no one instance is overwhelmed.
 
 AWS Auto Scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost.
 
-3 instances across 3 AZs. Need a policy which tells us when to use a different ec2 - e.g. when CPU reaches a certain level. We decide min instanecs and how many max and desired capacity.
+#### points to consider when setting up
 
-Each instance needs ports 80 and 3000. Need a load balancer allows aacess at ports 80 and 3000. We need a target group which allows access by port 80 and 3000.
+will use 3 instances across 3 AZs. Need a policy which tells us when to use a different ec2 - e.g. when CPU reaches a certain level. We decide min instanecs and how many max and desired capacity.
+
+Each instance needs ports 80 and 3000. Need a load balancer that allows aacess at ports 80 and 3000. We need a target group which allows access by port 80 and 3000.
 
 min and desired capaicty = 2 so infrastructure is fault tolerant
 
@@ -192,7 +201,7 @@ scale  out - create more instances of the same size, scale up - build a bigger e
  - need a launch template that can be replicated in multiple AZs with required information
  - ASG policy - target tracking policy (we want to track the target e.g. 50% or above CPU utilisation - if ec2 instance cpu hits 50% then ASG will spin up another instance)
  - target group required ports access
- - load balancer - application load balancer (it works at layer 7 of networking which utilitise Http) which will need multi AZs information
+ - load balancer - application load balancer (it works at layer 7 of networking which is for HTTP or HTTPs only traffic) which will need multi AZs information
 
 <img width="727" alt="image" src="https://user-images.githubusercontent.com/118978642/234559502-bdf58bee-9162-4d88-bf55-0fd33661350d.png">
 
