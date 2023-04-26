@@ -173,7 +173,8 @@ cd to app folder
 your app should run on webbrowser: appip:3000/posts
 
 ### avaialability, fault tolerant, scalable 
-<img width="311" alt="image" src="https://user-images.githubusercontent.com/118978642/234557501-29bb4235-97cb-4631-b231-94d98038c872.png">
+<img width="517" alt="image" src="https://user-images.githubusercontent.com/118978642/234579731-cf22fdb5-9997-476e-8878-393d18574808.png">
+
 
 #### general definitions
 
@@ -197,7 +198,7 @@ will use 3 instances across 3 AZs. Need a policy which tells us when to use a di
 
 Each instance needs ports 80 and 3000. Need a load balancer that allows aacess at ports 80 and 3000. We need a target group which allows access by port 80 and 3000.
 
-min and desired capaicty = 2 so infrastructure is fault tolerant
+min and desired capaicty = 2, so infrastructure is fault tolerant
 
 scale  out - create more instances of the same size, scale up - build a bigger ec2 server (e.g bigger cpu instance)
 
@@ -207,5 +208,4 @@ scale  out - create more instances of the same size, scale up - build a bigger e
  - target group required ports access
  - load balancer - application load balancer (it works at layer 7 of networking which is for HTTP or HTTPs only traffic) which will need multi AZs information
 
-<img width="727" alt="image" src="https://user-images.githubusercontent.com/118978642/234559502-bdf58bee-9162-4d88-bf55-0fd33661350d.png">
 
