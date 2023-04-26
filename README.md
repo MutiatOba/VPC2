@@ -212,22 +212,50 @@ implementation
 
 1. create launch template
 
-go to aws console
-EC2 in search box
-on left click on launch template
-click create and launch template
-give template name: mutiat_tech221_autoscaling_app
-use same in description
-tick box to provide guidedance tto ASG
+- go to aws console
+- type EC2 in search box
+- on left click on launch template
+- click create and launch template
+- give template name: mutiat_tech221_autoscaling_app
+- use same details in description
+- tick box to provide guidedance tto ASG
 <img width="454" alt="image" src="https://user-images.githubusercontent.com/118978642/234584171-6b111764-4fdb-4eb9-a5ee-2dee6073a675.png">
-chose ami to be 18.04 (18.04 LTS, amd64 bionic image build on 2022-09-01)
-instance typ: t2.micro
-select a key pair
-select existing security group: http, ssh, 3000
-in advanced details include the following in the userdata 
-#!/bin/bash
+- chose ami to be 18.04 (18.04 LTS, amd64 bionic image build on 2022-09-01)
+- instance typ: t2.micro
+- select a key pair
+- select existing security group: http, ssh, 3000
+- in advanced details include the following in the userdata 
+```#!/bin/bash
 sudo apt update -y 
 sudo apt upgrade -y
 sudo apt install nginx -y
 keep everything default
-click create launch template
+```
+- click create launch template
+
+<img width="578" alt="image" src="https://user-images.githubusercontent.com/118978642/234587571-594964c7-68e3-4ab9-b14f-447a8172a232.png">
+
+2. ASG
+- click on ASG on left
+- click launch asg
+- give name
+- select your launch template
+- click next
+- keep default VPC
+- AZ: chose 3 AZs
+<img width="357" alt="image" src="https://user-images.githubusercontent.com/118978642/234589075-799b8cc7-d4bb-4846-805c-13d5bd759b57.png">
+-click next
+- under load balancer, click no attach a new load balancer
+- click application load balancer
+- under load balancer scheme
+<img width="338" alt="image" src="https://user-images.githubusercontent.com/118978642/234592450-bbee280c-ba93-427a-bb35-f50fe9286218.png">
+<img width="351" alt="image" src="https://user-images.githubusercontent.com/118978642/234592781-a74ac96c-95fe-4cc4-9a8e-0c83f49fc81e.png">
+Health check should be populated like follow
+<img width="351" alt="image" src="https://user-images.githubusercontent.com/118978642/234593029-52f0c429-3e05-44b5-bb4b-ed4fcc004dcf.png">
+leave the rest as default and click next
+<img width="351" alt="image" src="https://user-images.githubusercontent.com/118978642/234593433-750bd335-e0b1-4cbb-8160-9d80c0b367cc.png">
+want to monitor CPU
+<img width="351" alt="image" src="https://user-images.githubusercontent.com/118978642/234593749-faff4f4a-71b6-4511-9e13-ae65a8d5b91f.png">
+rest deault - click on next
+click next again
+need to add tags - key: mutiat_tech221_asg_alb_app
