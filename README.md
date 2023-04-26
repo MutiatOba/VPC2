@@ -173,9 +173,21 @@ cd to app folder
 your app should run on webbrowser: appip:3000/posts
 
 ### avaialability, fault tolerant, scalable 
+<img width="311" alt="image" src="https://user-images.githubusercontent.com/118978642/234557501-29bb4235-97cb-4631-b231-94d98038c872.png">
+
 
 Elastic Load Balancing automatically distributes your incoming application traffic across all the EC2 instances that you are running. Elastic Load Balancing helps to manage incoming requests by optimally routing traffic so that no one instance is overwhelmed.
 
-AWS Auto Scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost
+AWS Auto Scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost.
+
+3 instances across 3 AZs. Need a policy which tells us when to use a different ec2 - e.g. when CPU reaches a certain level. We decide min instanecs and how many max and desired capacity.
+
+Each instance needs ports 80 and 3000. Need a load balancer allows aacess at ports 80 and 3000. We need a target group which allows access by port 80 and 3000.
+
+min and desired capaicty = 2 so infrastructure is fault tolerant
+
+scale  out - create more instances of the same size, scale up - build a bigger ec2 server (e.g bigger cpu instance)
+
+ To achieve this:
 
 
