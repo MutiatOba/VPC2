@@ -208,4 +208,26 @@ scale  out - create more instances of the same size, scale up - build a bigger e
  - target group required ports access
  - load balancer - application load balancer (it works at layer 7 of networking which is for HTTP or HTTPs only traffic) which will need multi AZs information
 
+implementation
 
+1. create launch template
+
+go to aws console
+EC2 in search box
+on left click on launch template
+click create and launch template
+give template name: mutiat_tech221_autoscaling_app
+use same in description
+tick box to provide guidedance tto ASG
+<img width="454" alt="image" src="https://user-images.githubusercontent.com/118978642/234584171-6b111764-4fdb-4eb9-a5ee-2dee6073a675.png">
+chose ami to be 18.04 (18.04 LTS, amd64 bionic image build on 2022-09-01)
+instance typ: t2.micro
+select a key pair
+select existing security group: http, ssh, 3000
+in advanced details include the following in the userdata 
+#!/bin/bash
+sudo apt update -y 
+sudo apt upgrade -y
+sudo apt install nginx -y
+keep everything default
+click create launch template
