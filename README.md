@@ -259,3 +259,6 @@ want to monitor CPU
 rest deault - click on next
 click next again
 need to add tags - key: mutiat_tech221_asg_alb_app
+review it then click create an asg
+
+click instances on left hand side and check that you have 2 instances running which should be in two different AZs
