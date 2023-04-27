@@ -65,5 +65,23 @@ To set up the aws cli, you need to take the following steps:
 
 17. Validate your connection to your S3 bucket by testing to see if you can see the objects inside. `aws s3 ls`. If prompted with error, follow from step 12 to configure again.
 
+<img width="375" alt="image" src="https://user-images.githubusercontent.com/118978642/234863704-26e8c517-2f65-42e1-af01-73cd7db7c4cc.png">
+
+want to:
+create bucket
+upload/download data
+delete
+
+to create a bucket: 
+- aws s3 mb s3://mutiat-tech221 (note naming convention prevents using symbols like _)
+- aws s3 ls (this allows you to view a list of buckets)
+- sudo nano test.txt (creates a file to be uploaded to s3 bucket)
+- aws s3 cp test.txt s3://mutiat-tech221 (copy file to your s3 bucket)
+- sudo rm test.txt (removes the file on server, but file should be avaiable in s3 bucket)
+- aws s3 cp s3://mutiat-tech221/test.txt /home/ubuntu (to download a file from s3 to ec2)
+- aws s3 rm s3://mutiat-tech221/text.txt (to remove the objects in the bucket)
+- aws s3 rb s3://mutiat-tech221 (to delete the bucket - need to delete the content before using this)
+
+s3 permissions [NEED TO RESEARCH]
 
 
