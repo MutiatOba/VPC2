@@ -83,5 +83,51 @@ to create a bucket:
 - aws s3 rb s3://mutiat-tech221 (to delete the bucket - need to delete the content before using this)
 
 s3 permissions [NEED TO RESEARCH]
+s3 storage class: https://aws.amazon.com/s3/storage-classes/
 
+#### using the cli to create s3 bucket, upload & download files and delete files & buckets
+
+Assume you already have the following:
+1. aws cli installed
+2. python3 installed
+3. signed into aws via cli
+
+Steps:
+1. install boto3: pip3 install boto3
+
+2. create the script for creating bucket: sudo nano script.py
+```
+import boto3
+
+s3_client = boto3.client('s3')
+
+bucket_name = 'mutiat-tech221'
+
+response = s3_client.create_bucket(
+    ACL='private',
+    Bucket=bucket_name,
+    CreateBucketConfiguration={
+        'LocationConstraint': 'eu-west-1'
+    }
+)
+
+print(bucket_name)
+print(response)
+```
+
+make the script executable: sudo chmod +x script.py
+excute the script: python script.py
+
+3. create script for uploading file to s3 bucket
+```
+import boto3
+
+s3 = boto3.client('s3')
+bucket_name ='mutiat-tech221'
+response2= s3.upload_file('/home/ubuntu/tests3.txt', bucket_name, 'tests3.txt')
+
+print(response2)
+```
+make the script executable: sudo chmod +x script.py
+excute the script: python script.py
 
