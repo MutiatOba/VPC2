@@ -131,3 +131,4 @@ print(response2)
 make the script executable: sudo chmod +x script.py
 excute the script: python script.py
 
+here is the doc: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html
