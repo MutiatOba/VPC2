@@ -132,3 +132,14 @@ make the script executable: sudo chmod +x script.py
 excute the script: python script.py
 
 here is the doc: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html
+
+
+## monitoring
+
+The 4 golden rules of monitoring: latency, traffic, errors, and saturation
+1.latency: The time it takes to service a request. It’s important to distinguish between the latency of successful requests and the latency of failed requests.
+2. traffic: A measure of how much demand is being placed on your system, measured in a high-level system-specific metric. 
+3. errors: The rate of requests that fail, either explicitly (e.g., HTTP 500s), implicitly (for example, an HTTP 200 success response, but coupled with the wrong content), or by policy (for example, "If you committed to one-second response times, any request over one second is an error"). 
+4. Saturation: How "full" your service is. A measure of your system fraction, emphasizing the resources that are most constrained (e.g., in a memory-constrained system, show memory; in an I/O-constrained system, show I/O)
+
+https://sre.google/sre-book/monitoring-distributed-systems/#:~:text=The%20four%20golden%20signals%20of,system%2C%20focus%20on%20these%20four.&text=The%20time%20it%20takes%20to,the%20latency%20of%20failed%20requests.
