@@ -162,4 +162,54 @@ To set up a notification once an alarm is triggured
 5. click on detailed monitoring and then confirm (note there will be additional charges for detailed monitoring)
 
 
-Detailed steps to create an alarm which monitors CPU utilisation of ec2 and sends an email (via sns) once cpu >50: (https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/US_AlarmAtThresholdEC2.html)
+Detailed steps to create an alarm which monitors CPU utilisation of ec2 and sends an email (via sns) once cpu >50:
+Open the CloudWatch console at https://console.aws.amazon.com/cloudwatch/.
+
+1. In the navigation pane, choose Alarms, All Alarms.
+
+2. Choose Create alarm.
+
+3. Choose Select metric.
+
+4. In the All metrics tab, choose EC2 metrics.
+
+5. Choose a metric category (for example, Per-Instance Metrics).
+
+6. Find the row with the instance that you want listed in the InstanceId column and CPUUtilization in the Metric Name column. Select the check box next to this row, and choose Select metric.
+
+7. Under Specify metric and conditions, for Statistic choose Average, choose one of the predefined percentiles, or specify a custom percentile (for example, p95.45).
+
+8. Choose a period (for example, 5 minutes).
+
+9. Under Conditions, specify the following:
+
+10. For Threshold type, choose Static.
+
+11. For Whenever CPUUtilization is, specify Greater. Under than..., specify the threshold that is to trigger the alarm to go to ALARM state if the CPU utilization exceeds this percentage. For example, 70.
+
+12. Choose Additional configuration. For Datapoints to alarm, specify how many evaluation periods (data points) must be in the ALARM state to trigger the alarm. If the two values here match, you create an alarm that goes to ALARM state if that many consecutive periods are breaching.
+
+13. To create an M out of N alarm, specify a lower number for the first value than you specify for the second value. For more information, see Evaluating an alarm.
+
+14. For Missing data treatment, choose how to have the alarm behave when some data points are missing. For more information, see Configuring how CloudWatch alarms treat missing data.
+
+15. If the alarm uses a percentile as the monitored statistic, a Percentiles with low samples box appears. Use it to choose whether to evaluate or ignore cases with low sample rates. If you choose ignore (maintain alarm state), the current alarm state is always maintained when the sample size is too low. For more information, see Percentile-based CloudWatch alarms and low data samples.
+
+16. Choose Next.
+
+17. Under Notification, choose In alarm and select an SNS topic to notify when the alarm is in ALARM state
+
+18. To have the alarm send multiple notifications for the same alarm state or for different alarm states, choose Add notification.
+
+19. To have the alarm not send notifications, choose Remove.
+
+20. When finished, choose Next.
+
+21. Enter a name and description for the alarm. The name must contain only UTF-8 characters, and can't contain ASCII control characters. Then choose Next.
+
+22. Under Preview and create, confirm that the information and conditions are what you want, then choose Create alarm
+
+
+(https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/US_AlarmAtThresholdEC2.html)
+
+Here is how to create a dashboard on cloudwatch: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create_dashboard.html
