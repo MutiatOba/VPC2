@@ -209,6 +209,7 @@ Open the CloudWatch console at https://console.aws.amazon.com/cloudwatch/.
 
 22. Under Preview and create, confirm that the information and conditions are what you want, then choose Create alarm
 
+23. SSH into your instance, create a script.py file with a inifite while loop, then execute the loop to trigger the alarm.
 
 (https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/US_AlarmAtThresholdEC2.html)
 
