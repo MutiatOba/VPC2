@@ -143,3 +143,23 @@ The 4 golden rules of monitoring: latency, traffic, errors, and saturation
 4. Saturation: How "full" your service is. A measure of your system fraction, emphasizing the resources that are most constrained (e.g., in a memory-constrained system, show memory; in an I/O-constrained system, show I/O)
 
 https://sre.google/sre-book/monitoring-distributed-systems/#:~:text=The%20four%20golden%20signals%20of,system%2C%20focus%20on%20these%20four.&text=The%20time%20it%20takes%20to,the%20latency%20of%20failed%20requests.
+
+<img width="423" alt="image" src="https://user-images.githubusercontent.com/118978642/235122143-ba288f39-5297-4344-b9c3-ab8c166b9f49.png">
+
+A look at some of the services you can monitor on cloudwatch
+
+<img width="310" alt="image" src="https://user-images.githubusercontent.com/118978642/235123984-c1eb1011-df09-4744-bc53-1c65c143d2f9.png">
+
+To set up a notification once an alarm is triggured 
+
+<img width="460" alt="image" src="https://user-images.githubusercontent.com/118978642/235125156-6f13ad3a-54c0-475d-801c-ad299e710b81.png">
+
+
+1. login to aws management console
+2. search ec2 instance 
+3. once instance are running, click on the monitoring tab.
+4. aws monitors somethings by default - this is not detailed so we can create custom monitoring 
+5. click on detailed monitoring and then confirm (note there will be additional charges for detailed monitoring)
+
+
+Detailed steps to create an alarm which monitors CPU utilisation of ec2 and sends an email (via sns) once cpu >50: (https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/US_AlarmAtThresholdEC2.html)
